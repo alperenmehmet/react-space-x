@@ -93,7 +93,7 @@ img {
 }
 
 .section {
-  padding: 5rem 0;
+  padding: 1rem 0;
 }
 .section-title {
   font-size: 2rem;
@@ -150,4 +150,81 @@ img {
 .launch-footer p {
   color: var(--darkGrey);
   margin-bottom: 0.5rem;
+}
+
+.search {
+  margin-top: 1rem;
+  padding-bottom: 0;
+  margin-bottom: 2rem;
+}
+
+.search-form {
+  width: var(--smallWidth);
+  margin: 0 auto;
+  max-width: var(--maxWidth);
+  background: var(--mainWhite);
+  padding: 2rem 2.5rem;
+  text-transform: capitalize;
+  border-radius: var(--mainBorderRadius);
+  box-shadow: var(--lightShadow);
+  text-align: center;
+}
+
+.form-control label {
+  display: block;
+  margin-bottom: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 0.25rem;
+  color: var(--primaryColor);
+}
+
+.form-control input {
+  width: 100%;
+  border: none;
+  border-color: transparent;
+  background: var(--mainBackground);
+  border-radius: var(--mainBorderRadius);
+  padding: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.lds-ripple {
+  display: block;
+  position: relative;
+  width: 80px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #476a2e;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
 }

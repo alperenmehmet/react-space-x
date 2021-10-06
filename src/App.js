@@ -3,6 +3,7 @@ import Loading from './components/Loading';
 import LaunchesCard from './components/LaunchesCard';
 import './App.css';
 import Header from './components/Header';
+import SearchForm from './components/SearchForm';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -24,6 +25,7 @@ const App = () => {
   return (
     <div className='section'>
       <Header />
+      <SearchForm detail={data} />
       <div className='launches-center'>
         {data.map((launch) =>
           launch.details != null && launch.links.flickr_images[0] != null ? (
