@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaRegHeart } from 'react-icons/fa';
 
 const LaunchesCard = ({ missionName, details, date, img }) => {
   const [readMore, setReadMore] = useState(false);
@@ -7,6 +8,9 @@ const LaunchesCard = ({ missionName, details, date, img }) => {
     <div className='launches'>
       <img src={img} className='img-container' />
       <div className='launch-footer'>
+        <button className='like-icon'>
+          <FaRegHeart />
+        </button>
         <p>{date}</p>
         <h3>{missionName}</h3>
         <h5>{readMore ? details : `${details.substring(0, 10)}...`}</h5>

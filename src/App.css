@@ -161,7 +161,7 @@ img {
 .search-form {
   width: var(--smallWidth);
   margin: 0 auto;
-  max-width: var(--maxWidth);
+  max-width: var(--fullWidth);
   background: var(--mainWhite);
   padding: 2rem 2.5rem;
   text-transform: capitalize;
@@ -227,4 +227,20 @@ img {
     height: 72px;
     opacity: 0;
   }
+}
+
+.like-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-color: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+  float: right;
+  background: var(--mainWhite);
+  transition: all 0.3s linear;
+  transform: scale(1.2);
+}
+
+.like-icon:hover {
+  transform: scale(2);
 }
