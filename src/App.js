@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Loading from './components/Loading';
 import LaunchesCard from './components/LaunchesCard';
-import './App.css';
 import Header from './components/Header';
 import SearchForm from './components/SearchForm';
+import './App.css';
 
 const App = () => {
   const [loading, setLoading] = useState(true);

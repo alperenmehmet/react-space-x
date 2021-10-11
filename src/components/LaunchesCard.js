@@ -1,15 +1,29 @@
 import React, { useState } from 'react';
 import { FaRegHeart } from 'react-icons/fa';
 
-const LaunchesCard = ({ missionName, details, date, img }) => {
+const getLocalStorage = () => {
+  const favoriteLaunchesFromLocalStorage =
+    localStorage.getItem('favoriteLaunches');
+  return favoriteLaunchesFromLocalStorage
+    ? JSON.parse(favoriteLaunchesFromLocalStorage)
+    : [];
+};
+
+const LaunchesCard = ({ missionName, details, date, img, isFavorite }) => {
   const [readMore, setReadMore] = useState(false);
+  const [favoriteLaunches, setFavoriteLaunches] = useState(getLocalStorage());
+
+  const addToFavorites = () => {
+    localStorage.setItem('favoriteLaunches', JSON.stringify(missionName));
+    setFavoriteLaunches(favoriteLaunches);
+  };
 
   return (
     <div className='launches'>
       <img src={img} className='img-container' />
       <div className='launch-footer'>
-        <button className='like-icon'>
-          <FaRegHeart />
+        <button className='like-icon' onClick={addToFavorites}>
+          <FaRegHeart style={{ fill: isFavorite ? 'red' : '' }} />
         </button>
         <p>{date}</p>
         <h3>{missionName}</h3>
