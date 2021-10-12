@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaRegHeart } from 'react-icons/fa';
+import LaunchDate from './LaunchDate';
 
 const getLocalStorage = () => {
   const favoriteLaunchesFromLocalStorage =
@@ -9,7 +10,14 @@ const getLocalStorage = () => {
     : [];
 };
 
-const LaunchesCard = ({ missionName, details, date, img, isFavorite }) => {
+const LaunchesCard = ({
+  missionName,
+  details,
+  date,
+  img,
+  isFavorite,
+  props,
+}) => {
   const [readMore, setReadMore] = useState(false);
   const [favoriteLaunches, setFavoriteLaunches] = useState(getLocalStorage());
 
@@ -25,7 +33,7 @@ const LaunchesCard = ({ missionName, details, date, img, isFavorite }) => {
         <button className='like-icon' onClick={addToFavorites}>
           <FaRegHeart style={{ fill: isFavorite ? 'red' : '' }} />
         </button>
-        <p>{date}</p>
+        <LaunchDate date={date} />
         <h3>{missionName}</h3>
         <h5>{readMore ? details : `${details.substring(0, 10)}...`}</h5>
         <button
