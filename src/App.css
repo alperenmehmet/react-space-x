@@ -244,3 +244,33 @@ img {
 .like-icon:hover {
   transform: scale(2);
 }
+
+.red-like-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-color: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+  float: right;
+  transition: all 0.3s linear;
+  transform: scale(1.2);
+  background-color: red;
+}
+.logo {
+  width: 80px;
+  height: 20px;
+}
+
+.navbar-container {
+  margin: 0;
+  background: var(--mainWhite);
+  padding: 2rem 2.5rem;
+  text-transform: capitalize;
+  border-radius: var(--mainBorderRadius);
+  box-shadow: var(--lightShadow);
+  text-align: center;
+}
+
+.navbar-links {
+  display: flex;
+}

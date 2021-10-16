@@ -10,14 +10,7 @@ const getLocalStorage = () => {
     : [];
 };
 
-const LaunchesCard = ({
-  missionName,
-  details,
-  date,
-  img,
-  isFavorite,
-  props,
-}) => {
+const LaunchesCard = ({ missionName, details, date, img, isFavorite }) => {
   const [readMore, setReadMore] = useState(false);
   const [favoriteLaunches, setFavoriteLaunches] = useState(getLocalStorage());
 
@@ -31,7 +24,7 @@ const LaunchesCard = ({
       <img src={img} className='img-container' />
       <div className='launch-footer'>
         <button className='like-icon' onClick={addToFavorites}>
-          <FaRegHeart style={{ fill: isFavorite ? 'red' : '' }} />
+          <FaRegHeart />
         </button>
         <LaunchDate date={date} />
         <h3>{missionName}</h3>
