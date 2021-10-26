@@ -61,18 +61,22 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className='navbar-container'>
-        <img className='logo' src={logo} alt='' />
-        <ul className='navbar-links' ref={linksContainerRef}>
-          {links.map((link) => {
-            const { id, url, text } = link;
-            return (
-              <li key={id} ref={linksRef}>
-                <i href={url}>{text}</i>
-              </li>
-            );
-          })}
-        </ul>
+      <div className='navbar-center'>
+        <div className='nav-header'>
+          <img className='logo' src={logo} alt='' />
+          <div className='links-container'>
+            <ul className='links' ref={linksContainerRef}>
+              {links.map((link) => {
+                const { id, url, text } = link;
+                return (
+                  <li key={id} ref={linksRef}>
+                    <a href={url}>{text}</a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
       </div>
     </nav>
   );

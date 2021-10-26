@@ -3,12 +3,13 @@ import Loading from './components/Loading';
 import LaunchesCard from './components/LaunchesCard';
 import Header from './components/Header';
 import SearchForm from './components/SearchForm';
-import './App.css';
 import Navbar from './components/Navbar';
+import './App.css';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [search, setSearch] = useState(false);
 
   useEffect(() => {
     fetch('https://api.spacex.land/rest/launches/')
@@ -23,11 +24,16 @@ const App = () => {
     return <Loading />;
   }
 
+  const onSearchChangeHandler = (searchInputValue) => {
+    setSearch(searchInputValue);
+    console.log(searchInputValue);
+  };
+
   return (
     <div className='section'>
       <Navbar />
       <Header />
-      <SearchForm />
+      <SearchForm onSearchChangeHandler={onSearchChangeHandler} />
       <div className='launches-center'>
         {data.map((launch) =>
           launch.details != null && launch.links.flickr_images[0] != null ? (

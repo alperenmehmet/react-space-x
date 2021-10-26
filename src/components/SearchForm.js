@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const SearchForm = ({ data }) => {
+const SearchForm = (props) => {
   return (
     <section className='section search'>
       <form className='search-form'>
@@ -11,6 +11,9 @@ const SearchForm = ({ data }) => {
             name='search-form'
             id='search-form'
             className='search-input'
+            onChange={(e) => {
+              props.onSearchChangeHandler(e.target.value);
+            }}
           />
         </div>
       </form>
